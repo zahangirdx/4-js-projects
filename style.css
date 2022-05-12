@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+:root{
+  --theme-color: #ff1756;
+} 
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  background: linear-gradient(-55deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 2s ease infinite;
+    position: relative;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+nav .logo{
+  color: #fff;
+  font-size: 45px;
+  font-weight: 600;
+  font-family: Lobster;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+  0px 8px 13px rgba(0,0,0,0.1),
+  0px 18px 23px rgba(0,0,0,0.1);
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: rgb(255, 255, 255);
+  background: linear-gradient(-55deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 1s ease infinite;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+.container{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+}
+.me-card{
+  height: 430px;
+  width: 320px;
+  background: linear-gradient(
+      to bottom,
+      var(--theme-color) 110px,
+      #ffffff 110px
+  );
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(50,50,50,0.1);
+  padding: 50px 0;
+}
+.me-card *{
+  font-family: 'Poppins',sans-serif;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+img{
+  display: block;
+  width: 150px;
+  height: 140px;
+  position: relative;
+  border-radius: 10%;
+  margin: 0 auto;
+  box-shadow: 0 0 0 4px #ffffff;
+}
+.me-card h4{
+  color: var(--theme-color);
+  font-size: 16px;
+  margin: 15px 0 5px 0;
+}
+.me-card h5{
+  color: #454545;
+  font-weight: 400;
+  font-size: 14px;
+}
+.details{
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+.details h2{
+  font-weight: 400;
+}
+.details span{
+  color: var(--theme-color);
+}
+.buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.buttons button{
+  width: 130px;
+  padding: 8px 0;
+  border-radius: 25px;
+  border: 3px solid var(--theme-color);
+  cursor: pointer;
+}
+.buttons button:first-child{
+  background-color: var(--theme-color);
+  color: #ffffff;
+}
+.buttons button:last-child{
+  background-color: transparent;
+  color: var(--theme-color);
+}
+.themes{
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(50,50,50,0.1);
+  padding: 20px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 8%;
+}
+.themes button{
+  height: 25px;
+  width: 25px;
+  border: 3px solid #dddddd;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.btn1{
+  background-color: #3498db;
+}
+.btn2{
+  background-color: #ff1756;
+}
+.btn3{
+  background-color: #1cb65d;
+}
+.btn4{
+  background-color: #8e44ad;
+}
+.btn5{
+  background-color: #000000;
+}
+
+.logo {
+  font-family: 'Kavoon', sans-serif;
+}
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #414343, #000000);
+
+	animation: gradient 15s infinite;	
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+
+
+
